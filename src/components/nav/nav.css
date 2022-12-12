@@ -1,0 +1,119 @@
+.nav__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: var(--color-white);
+  z-index: 999;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo__icon {
+  color: var(--color-primary);
+  font-size: 2rem;
+}
+.logo > h3 {
+  cursor: pointer;
+  font-size: 2rem;
+  margin-left: 1rem;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu__items {
+  display: inline-block;
+  margin-inline: 1rem;
+}
+
+.menu__items:hover .menu__link {
+  color: var(--color-primary);
+}
+.menu__link {
+  color: var(--color-light);
+}
+
+.menu-bars,
+.close-icon {
+  display: none;
+  position: absolute;
+  top: calc(56px / 2);
+  transform: translateY(-50%);
+  z-index: 9999;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Media Query for medium devices */
+@media screen and (max-width: 1024px) {
+  .logo {
+    display: none;
+  }
+  .menu__items {
+    display: none;
+  }
+  .nav__container {
+    position: relative;
+  }
+  .nav__container .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    background: var(--color-white);
+    align-items: flex-start;
+    padding-top: 2rem;
+    justify-content: start;
+    overflow: hidden;
+    transition: var(--transition);
+    z-index: 10;
+  }
+  .nav__container .mobile-menu .close-icon,
+  nav .menu-bars {
+    display: block;
+    right: 1rem;
+  }
+  .nav__container .mobile-menu .menu__items {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 1rem;
+    transition: var(--transition);
+  }
+  .nav__container .mobile-menu .menu__items::before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 100%;
+    background: var(--color-primary);
+    margin-right: 5px;
+  }
+  .nav__container .mobile-menu .menu__items:hover {
+    background: var(--color-primary);
+  }
+  .nav__container .mobile-menu .menu__items:hover .menu__link {
+    color: var(--color-white);
+  }
+  .nav__container .mobile-menu .menu__items .menu__link {
+    font-size: 1.5rem;
+    width: 100%;
+  }
+}
+
+/* Media Query for small devices */
+@media screen and (max-width: 600px) {
+  .nav__container .mobile-menu {
+    width: 80%;
+  }
+}

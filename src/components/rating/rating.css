@@ -1,0 +1,22 @@
+.rating__container button {
+  background-color: transparent;
+  cursor: pointer;
+}
+.primary-on {
+  color: var(--color-primary);
+}
+.secondary-on {
+  color: var(--color-yellow);
+}
+
+.primary-off,
+.secondary-off {
+  color: #ccc;
+}
+
+.primary-star {
+  color: var(--color-primary);
+}
+.secondary-star {
+  color: var(--color-yellow);
+}
